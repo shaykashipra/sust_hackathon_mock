@@ -196,6 +196,12 @@ This repository also includes `render.yaml`, so Render can detect the same free 
 
 If Render tries Python `3.14` and fails while installing `pydantic-core`, keep `.python-version` in the repository. It pins the deploy runtime to Python `3.13.5`.
 
+If Render runs `gunicorn your_application.wsgi`, the service start command is still using Render's default Python command. Change the Render service start command to:
+
+```text
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+
 For the submission form:
 
 - GitHub repository URL: your public GitHub repo link
