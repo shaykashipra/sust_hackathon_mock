@@ -194,6 +194,8 @@ Recommended free option: Render Web Service. Docker is not required on your comp
 
 This repository also includes `render.yaml`, so Render can detect the same free Python deployment settings automatically.
 
+If Render tries Python `3.14` and fails while installing `pydantic-core`, keep `runtime.txt` in the repository. It pins the deploy runtime to Python `3.13.3`.
+
 For the submission form:
 
 - GitHub repository URL: your public GitHub repo link
